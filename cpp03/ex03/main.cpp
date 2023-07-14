@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: admansar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/13 15:53:57 by admansar          #+#    #+#             */
-/*   Updated: 2023/07/13 15:54:08 by admansar         ###   ########.fr       */
+/*   Created: 2023/07/11 11:48:33 by admansar          #+#    #+#             */
+/*   Updated: 2023/07/14 21:06:22 by admansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-#define SCAVTRAP_H
-
 #include <iostream>
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
-class ScavTrap : public ClapTrap
+
+
+int main()
 {
-	public :
-		ScavTrap();
-		ScavTrap(ScavTrap &other);
-		ScavTrap(std::string str);
-		ScavTrap &operator=(ScavTrap &other);
-		void attack(const std::string &target);
-		void guardGate();
-		~ScavTrap();
-};
+	DiamondTrap test("ruined");
 
-#endif
+	test.whoAmI();
+	test.attack("Foo");
+	test.takeDamage(10);
+	test.guardGate();
+	test.highFivesGuys();
+	test.beRepaired(20);
+	return (0);
+}
+

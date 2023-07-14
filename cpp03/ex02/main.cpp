@@ -1,31 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: admansar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/13 15:53:57 by admansar          #+#    #+#             */
-/*   Updated: 2023/07/13 15:54:08 by admansar         ###   ########.fr       */
+/*   Created: 2023/07/11 11:48:33 by admansar          #+#    #+#             */
+/*   Updated: 2023/07/13 15:52:12 by admansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-#define SCAVTRAP_H
-
 #include <iostream>
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-class ScavTrap : public ClapTrap
+int main()
 {
-	public :
-		ScavTrap();
-		ScavTrap(ScavTrap &other);
-		ScavTrap(std::string str);
-		ScavTrap &operator=(ScavTrap &other);
-		void attack(const std::string &target);
-		void guardGate();
-		~ScavTrap();
-};
+	ClapTrap a("Foo");
+	ScavTrap b("Poo");
+	FragTrap c("Goo");
 
-#endif
+
+	a.attack("Poo");
+	b.attack("Foo");
+	c.attack("Poo");
+	c.attack("Foo");
+	a.beRepaired(2);
+	b.beRepaired(5);
+	c.beRepaired(9);
+	a.beRepaired(20);
+	b.takeDamage(10);
+	c.takeDamage(70);
+	a.takeDamage(31);
+	b.takeDamage(4);
+	b.takeDamage(20);
+	a.takeDamage(1);
+	c.takeDamage(10);
+	b.guardGate();
+	c.highFivesGuys();
+	return (0);
+}
