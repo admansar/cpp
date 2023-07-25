@@ -6,7 +6,7 @@
 /*   By: admansar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 13:14:21 by admansar          #+#    #+#             */
-/*   Updated: 2023/07/20 20:03:17 by admansar         ###   ########.fr       */
+/*   Updated: 2023/07/24 23:21:29 by admansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,16 @@ Cat::Cat()
 }
 
 Cat::Cat(Cat &other)
-	:AAnimal(other) ,nom(other.nom) 
+	:AAnimal(other) ,nom(other.nom)
 {
-	brain = other.brain;
+	brain = new Brain(*other.brain);
 	type = "Cat";
 	std::cout << "constructeur par copie du class cat\n";
 }
 
 Cat &Cat::operator=(Cat const &other)
 {
-	brain = other.brain;
+	brain = new Brain(*other.brain);
 	nom = other.nom;
 	return (*this);
 }

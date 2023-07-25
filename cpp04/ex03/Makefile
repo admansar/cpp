@@ -1,4 +1,4 @@
-NAME = AMateria
+NAME = Interface
 
 SRC = main.cpp AMateria.cpp Character.cpp Cure.cpp  MateriaSource.cpp Ice.cpp
 

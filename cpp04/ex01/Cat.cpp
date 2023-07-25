@@ -24,14 +24,14 @@ Cat::Cat()
 Cat::Cat(Cat &other)
 	:Animal(other) ,nom(other.nom) 
 {
-	brain = other.brain;
+	brain = new Brain(*other.brain);
 	type = "Cat";
 	std::cout << "constructeur par copie du class cat\n";
 }
 
 Cat &Cat::operator=(Cat const &other)
 {
-	brain = other.brain;
+	brain = new Brain(*other.brain);
 	nom = other.nom;
 	return (*this);
 }

@@ -14,7 +14,6 @@
 #define ICHARACTER_H
 
 #include <iostream>
-//#include "AMATERIA.hpp"
 
 class AMateria;
 

@@ -6,7 +6,7 @@
 /*   By: admansar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 13:14:47 by admansar          #+#    #+#             */
-/*   Updated: 2023/07/20 20:03:30 by admansar         ###   ########.fr       */
+/*   Updated: 2023/07/24 23:19:29 by admansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Dog::Dog()
 Dog::Dog(Dog &other)
 	:AAnimal(other), nom(other.nom)
 {
-	brain = other.brain;
+	brain = new Brain(*other.brain);
 	type = "Dog";
 	std::cout << "constructeur par copie du class dog\n";
 }
@@ -40,7 +40,7 @@ Dog::Dog(std::string name)
 
 Dog &Dog::operator=(Dog const &other)
 {
-	brain = other.brain;
+	brain = new Brain(*other.brain);
 	type = other.type;
 	nom = other.nom;
 	return (*this);

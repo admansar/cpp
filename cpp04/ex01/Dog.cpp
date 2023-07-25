@@ -25,7 +25,7 @@ Dog::Dog()
 Dog::Dog(Dog &other)
 	:Animal(other), nom(other.nom)
 {
-	brain = other.brain;
+	brain = new Brain(*other.brain);
 	type = "Dog";
 	std::cout << "constructeur par copie du class dog\n";
 }
@@ -40,7 +40,7 @@ Dog::Dog(std::string name)
 
 Dog &Dog::operator=(Dog const &other)
 {
-	brain = other.brain;
+	brain = new Brain(*other.brain);
 	type = other.type;
 	nom = other.nom;
 	return (*this);
